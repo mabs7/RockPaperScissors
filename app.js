@@ -33,9 +33,11 @@ let computerScore = 0;
 function playRound () {
   if ((humanChoice == "rock" && computerChoice == "paper") ||(humanChoice == "paper" && computerChoice =="scissors") || (humanChoice == "scissors" && computerChoice =="rock")){
     alert ("you loose");
+    computerScore++;
   }
   else if ((humanChoice == "scissors" && computerChoice =="paper") || (humanChoice == "rock" && computerChoice =="scissors") || (humanChoice == "paper" && computerChoice =="rock")){
     alert ("You win");
+    humanScore++;
   }
   else 
    {
@@ -44,4 +46,13 @@ function playRound () {
 }
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
-playRound (humanSelection, computerSelection);
+
+
+function playGame () {
+  for (let i = 0; i <= 5; i++) {
+    playRound (humanSelection, computerSelection);
+    console.log(humanScore);
+    console.log(computerScore);
+  }
+}
+playGame();
